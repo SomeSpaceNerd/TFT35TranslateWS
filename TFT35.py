@@ -2,7 +2,7 @@ import serial
 import requests
 import json
 import time
-import config
+from websockets.sync.client import connect
 import TFTrst
 
 RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
