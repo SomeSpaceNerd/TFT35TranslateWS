@@ -3,9 +3,10 @@ import requests
 import json
 import time
 from websockets.sync.client import connect
+import config
 import TFTrst
 
-RS232 = serial.Serial('/dev/serial0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
+RS232 = serial.Serial(str(config.ScreenInterface), baudrate=int(config.ScreenBaud), parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
 Success = 0
 SerialData = ""
 Startup= 0
